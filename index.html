@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zixiang Xu | Academic Homepage</title>
+  <meta name="description" content="Academic homepage of Zixiang Xu: extremal combinatorics, discrete geometry, and information theory." />
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --card: #ffffff;
+      --text: #17202a;
+      --muted: #566573;
+      --line: #dbe4ee;
+      --blue: #1f5faa;
+      --blue-dark: #163f73;
+      --soft: #eef4fb;
+      --accent: #0b7a75;
+      --shadow: 0 10px 30px rgba(25, 50, 90, 0.08);
+      --max: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #f8fbff 0%, #f5f8fc 100%);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      font-weight: 700;
+      color: var(--blue-dark);
+      letter-spacing: 0.2px;
+      white-space: nowrap;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: flex-end;
+    }
+
+    .nav a {
+      color: var(--muted);
+      font-size: 0.96rem;
+      font-weight: 600;
+    }
+
+    .nav a:hover { color: var(--blue); }
+
+    .hero {
+      padding: 58px 0 28px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.9fr;
+      gap: 26px;
+      align-items: start;
+    }
+
+    .hero-card, .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 34px 30px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--soft);
+      color: var(--blue-dark);
+      border: 1px solid #d7e5f6;
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: #132033;
+    }
+
+    .subtitle {
+      margin: 0 0 14px;
+      color: var(--blue-dark);
+      font-size: 1.1rem;
+      font-weight: 650;
+    }
+
+    .lead {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 16px;
+      border-radius: 10px;
+      font-weight: 700;
+      border: 1px solid var(--line);
+      transition: 0.15s ease;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: #fff;
+      border-color: var(--blue);
+    }
+
+    .btn-primary:hover {
+      background: var(--blue-dark);
+      border-color: var(--blue-dark);
+      text-decoration: none;
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--blue);
+    }
+
+    .btn-secondary:hover {
+      background: #f7fbff;
+      text-decoration: none;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .mini-card {
+      padding: 20px;
+    }
+
+    .mini-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.02rem;
+      color: #18314f;
+    }
+
+    .mini-card p, .mini-card li {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .mini-card ul {
+      margin: 8px 0 0 18px;
+      padding: 0;
+    }
+
+    section {
+      padding: 18px 0;
+    }
+
+    .section-title {
+      margin: 0 0 14px;
+      font-size: 1.7rem;
+      line-height: 1.2;
+      color: #132033;
+    }
+
+    .section-intro {
+      margin: 0 0 18px;
+      color: var(--muted);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      padding: 24px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .chip {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--soft);
+      border: 1px solid #d7e5f6;
+      color: var(--blue-dark);
+      font-size: 0.9rem;
+      font-weight: 650;
+    }
+
+    .stat {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--blue-dark);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .muted { color: var(--muted); }
+
+    .list-tight {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .list-tight li { margin: 5px 0; }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    details + details {
+      margin-top: 14px;
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 16px 18px;
+      font-weight: 800;
+      color: #18314f;
+      background: #fbfdff;
+      border-bottom: 1px solid transparent;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    details[open] summary {
+      border-bottom-color: var(--line);
+    }
+
+    .details-body {
+      padding: 18px;
+    }
+
+    .pub-list {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .pub-list li {
+      margin: 10px 0;
+      color: #233447;
+    }
+
+    .paper-title {
+      font-weight: 700;
+      color: #1a2e45;
+    }
+
+    .small-note {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 30px 0 50px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .footer-box {
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .grid-2,
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0e1520;
+        --card: #121c29;
+        --text: #e7eef8;
+        --muted: #b7c5d8;
+        --line: #233245;
+        --blue: #7db3ff;
+        --blue-dark: #b8d3ff;
+        --soft: #162233;
+        --accent: #71d7cf;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      }
+
+      body {
+        background: linear-gradient(180deg, #0d1520 0%, #111b28 100%);
+      }
+
+      .topbar {
+        background: rgba(14, 21, 32, 0.9);
+      }
+
+      .btn-primary {
+        color: #0b1520;
+        background: var(--blue);
+        border-color: var(--blue);
+      }
+
+      .btn-primary:hover {
+        background: #9ac4ff;
+        border-color: #9ac4ff;
+      }
+
+      .btn-secondary {
+        background: transparent;
+        border-color: var(--line);
+        color: var(--blue);
+      }
+
+      .btn-secondary:hover {
+        background: rgba(255,255,255,0.03);
+      }
+
+      summary {
+        background: rgba(255,255,255,0.02);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">Zixiang Xu</div>
+      <nav class="nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#activities">Activities</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-card">
+          <div class="eyebrow">Extremal Combinatorics · Discrete Geometry · Information Theory</div>
+          <h1>Zixiang Xu <span style="font-weight:600; color: var(--muted);">徐子翔</span></h1>
+          <p class="subtitle">Senior Researcher, IBS Extremal Combinatorics and Probability Group</p>
+          <p class="lead">
+            I work in extremal combinatorics, discrete geometry, and information theory, with a broad interest in building bridges among different parts of combinatorics. I am currently a Senior Researcher at the Extremal Combinatorics and Probability Group, Institute for Basic Science (IBS), mentored by Hong Liu. I received my Ph.D. in 2022 from the School of Mathematical Sciences, Capital Normal University, under the supervision of Gennian Ge.
+          </p>
+          <p class="lead" style="margin-top: 12px;">
+            In the near future (around summer 2026), I will join Zhejiang University as a Hundred Talents Program Researcher.
+          </p>
+          <div class="button-row">
+            <a class="btn btn-primary" href="mailto:zixiangxu@ibs.re.kr">Email</a>
+            <a class="btn btn-secondary" href="https://www.ibs.re.kr/ecopro/zixiangxu/" target="_blank" rel="noopener">Previous IBS Page</a>
+          </div>
+        </div>
+
+        <div class="mini-grid">
+          <div class="hero-card mini-card">
+            <h3>Current Position</h3>
+            <p>Senior Researcher, Extremal Combinatorics and Probability Group, Institute for Basic Science (IBS)</p>
+          </div>
+
+          <div class="hero-card mini-card">
+            <h3>Incoming Position</h3>
+            <p>Hundred Talents Program Researcher, Zhejiang University (expected summer 2026)</p>
+          </div>
+
+          <div class="hero-card mini-card">
+            <h3>Education</h3>
+            <ul>
+              <li>Ph.D. in Mathematics, Capital Normal University (2022)</li>
+              <li>B.S. in Mathematics, Zhejiang University (2016)</li>
+            </ul>
+          </div>
+
+          <div class="hero-card mini-card">
+            <h3>Recognition</h3>
+            <p>2024 Kirkman Medal</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About</h2>
+        <p class="section-intro">
+          My research focuses on extremal and structural questions in combinatorics, often with interactions with discrete geometry, graph theory, set systems, coding theory, and probabilistic methods.
+        </p>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3 style="margin-top:0;">Research Interests</h3>
+            <div class="chips">
+              <span class="chip">Extremal Combinatorics</span>
+              <span class="chip">Discrete Geometry</span>
+              <span class="chip">Information Theory</span>
+              <span class="chip">Set Systems</span>
+              <span class="chip">Graph Theory</span>
+              <span class="chip">VC-Dimension</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 style="margin-top:0;">Beyond Research</h3>
+            <ul class="list-tight">
+              <li>Table tennis</li>
+              <li>Billiards</li>
+              <li>Running</li>
+            </ul>
+            <p class="small-note" style="margin-top:10px;">
+              Personal bests listed on my previous page: Half Marathon 01:54:56; 10KM 00:40:39; 5KM 00:18:49.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="container">
+        <h2 class="section-title">Research Overview</h2>
+        <p class="section-intro">
+          Recent work spans extremal set theory, VC-dimension, Euclidean Ramsey theory, graph homomorphism thresholds, geometric graph problems, and coding-theoretic questions.
+        </p>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="stat">14</div>
+            <div class="muted">Current preprints listed on the previous site</div>
+          </div>
+          <div class="card">
+            <div class="stat">25</div>
+            <div class="muted">Published papers listed on the previous site</div>
+          </div>
+          <div class="card">
+            <div class="stat">40+</div>
+            <div class="muted">Frequent collaborators across combinatorics and related areas</div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: 22px;">
+          <h3 style="margin-top:0;">Frequent Collaborators</h3>
+          <p class="muted" style="margin-bottom:0;">
+            Gennian Ge (20), Hong Liu (6), Xinbu Cheng (5), Chi Hoi Yip (5), Mingyuan Rong (4), Tao Zhang (4), Jun Gao (3), Xinqi Huang (3), Shengtong Zhang (3), Jiangdong Ai (2), Wenchong Chen (2), Yifan Jing (2), Yang Shu (2), Wenjun Yu (2), Yijun Zhang (2), Xiaochen Zhao (2), and many others.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="container">
+        <h2 class="section-title">Publications & Preprints</h2>
+        <p class="section-intro">
+          Below is a consolidated list adapted from the previous homepage. You can later split this into separate pages if you want a shorter landing page.
+        </p>
+
+        <details open>
+          <summary>Preprints</summary>
+          <div class="details-body">
+            <ol class="pub-list">
+              <li><span class="paper-title">Turan problems for multilinear maps</span>, with Qiyuan Chen and Ke Ye. <a href="https://arxiv.org/abs/2603.00715" target="_blank" rel="noopener">arXiv:2603.00715</a></li>
+              <li><span class="paper-title">A Tverberg-type problem of Kalai: Two negative answers to questions of Alon and Smorodinsky, and the power of disjointness</span>, with Wenchong Chen, Gennian Ge, Yang Shu and Zhouningxin Wang. <a href="https://arxiv.org/abs/2510.20770" target="_blank" rel="noopener">arXiv:2510.20770</a></li>
+              <li><span class="paper-title">Canonical Ramsey: Triangles, rectangles and beyond</span>, with Yijia Fang, Gennian Ge, Yang Shu, Qian Xu and Dilong Yang. <a href="https://arxiv.org/abs/2510.11638" target="_blank" rel="noopener">arXiv:2510.11638</a></li>
+              <li><span class="paper-title">PIR over Graphs</span>, with Gennian Ge, Hao Wang and Yijun Zhang. <a href="https://arxiv.org/abs/2509.26512" target="_blank" rel="noopener">arXiv:2509.26512</a></li>
+              <li><span class="paper-title">All rectangles exhibit canonical Ramsey property</span>, with Gennian Ge and Yang Shu. <a href="https://arxiv.org/abs/2508.02465" target="_blank" rel="noopener">arXiv:2508.02465</a></li>
+              <li><span class="paper-title">Optimal stability results on color-biased Hamilton cycles</span>, with Wenchong Chen and Mingyuan Rong. <a href="https://arxiv.org/abs/2507.17739" target="_blank" rel="noopener">arXiv:2507.17739</a></li>
+              <li><span class="paper-title">Largest dyadic dual VC-dimension of non-piercing families</span>, with Xinqi Huang, Yuzhen Qi and Mingyuan Rong. <a href="https://arxiv.org/abs/2506.13606" target="_blank" rel="noopener">arXiv:2506.13606</a></li>
+              <li><span class="paper-title">Optimal reconstruction codes with given reads in multiple Burst substitutions channel</span>, with Gennian Ge, Moshe Schwartz, Yubo Sun and Wenjun Yu. <a href="https://arxiv.org/abs/2506.12924" target="_blank" rel="noopener">arXiv:2506.12924</a></li>
+              <li><span class="paper-title">Largest 3-uniform set systems with VC-dimension 2</span>, with Jian Wang and Shengtong Zhang. <a href="https://arxiv.org/abs/2505.07756" target="_blank" rel="noopener">arXiv:2505.07756</a></li>
+              <li><span class="paper-title">Interpolating chromatic and homomorphism thresholds</span>, with Xinqi Huang, Hong Liu and Mingyuan Rong. <a href="https://arxiv.org/abs/2502.09576" target="_blank" rel="noopener">arXiv:2502.09576</a></li>
+              <li><span class="paper-title">Strong Ramsey games on two boards</span>, with Jiangdong Ai, Jun Gao and Xin Yan. <a href="https://arxiv.org/abs/2501.06830" target="_blank" rel="noopener">arXiv:2501.06830</a></li>
+              <li><span class="paper-title">Algebraic approach to stability results for Erdos-Ko-Rado theorem</span>, with Gennian Ge and Xiaochen Zhao. <a href="https://arxiv.org/abs/2410.22676" target="_blank" rel="noopener">arXiv:2410.22676</a></li>
+              <li><span class="paper-title">Beyond chromatic threshold via (p,q)-theorem, and sharp blow-up phenomenon</span>, with Hong Liu, Chong Shangguan and Jozef Skokan. <a href="https://arxiv.org/abs/2403.17910" target="_blank" rel="noopener">arXiv:2403.17910</a></li>
+              <li><span class="paper-title">A new variant of the Erdős–Gyárfás problem on K<sub>5</sub></span>, with Gennian Ge and Yixuan Zhang. <a href="https://arxiv.org/abs/2306.14682" target="_blank" rel="noopener">arXiv:2306.14682</a></li>
+            </ol>
+          </div>
+        </details>
+
+        <details style="margin-top: 14px;">
+          <summary>Published Papers</summary>
+          <div class="details-body">
+            <ol class="pub-list">
+              <li><span class="paper-title">Clique density vs blowups</span>, with Domagoj Bradač, Hong Liu and Zhuo Wu. <a href="https://arxiv.org/abs/2410.07098" target="_blank" rel="noopener">arXiv:2410.07098</a>. <em>Combinatorics, Probability and Computing</em>, to appear.</li>
+              <li><span class="paper-title">Sperner systems with restricted differences</span>, with Chi Hoi Yip. <a href="https://arxiv.org/abs/2210.02409" target="_blank" rel="noopener">arXiv:2210.02409</a>. <em>Combinatorial Theory</em>, to appear.</li>
+              <li><span class="paper-title">Uniform set systems with small VC-dimension</span>, with Ting-Wei Chao, Chi Hoi Yip, and Shengtong Zhang. <a href="https://arxiv.org/abs/2501.13850" target="_blank" rel="noopener">arXiv:2501.13850</a>. <em>International Mathematics Research Notices</em>, 2025, Issue 17, rnaf269.</li>
+              <li><span class="paper-title">Optimal redundancy of function-correcting codes</span>, with Gennian Ge, Xiande Zhang and Yijun Zhang. <a href="https://arxiv.org/abs/2502.16983" target="_blank" rel="noopener">arXiv:2502.16983</a>. <em>IEEE Transactions on Information Theory</em>, 71(12): 9458–9467, 2025.</li>
+              <li><span class="paper-title">Extremal number of graphs from geometric shapes</span>, with Jun Gao, Oliver Janzer and Hong Liu. <a href="https://arxiv.org/abs/2303.13380" target="_blank" rel="noopener">arXiv:2303.13380</a>. <em>Israel Journal of Mathematics</em> 269, 761–799 (2025).</li>
+              <li><span class="paper-title">Sublinear hitting sets for some geometric graphs</span>, with Xinbu Cheng, Xinqi Huang and Mingyuan Rong. <a href="https://arxiv.org/abs/2404.10379" target="_blank" rel="noopener">arXiv:2404.10379</a>. <em>Frontiers in Combinatorics and Number Theory</em>, vol. 2, May 2026.</li>
+              <li><span class="paper-title">The Frankl-Pach upper bound is not tight for any uniformity</span>, with Gennian Ge, Chi Hoi Yip, Shengtong Zhang and Xiaochen Zhao. <a href="https://arxiv.org/abs/2412.11901" target="_blank" rel="noopener">arXiv:2412.11901</a>. <em>Journal of Combinatorial Theory, Series A</em> 217 (2026), Paper No. 106078.</li>
+              <li><span class="paper-title">Intersective sets over abelian groups</span>, with Chi Hoi Yip. <a href="https://arxiv.org/abs/2207.00053" target="_blank" rel="noopener">arXiv:2207.00053</a>. <em>Designs, Codes and Cryptography</em> 94, 19 (2026).</li>
+              <li><span class="paper-title">Bollobás-Erdős-Tuza conjecture for graphs with no induced K<sub>s,t</sub></span>, with Xinbu Cheng. <a href="https://arxiv.org/abs/2405.18264" target="_blank" rel="noopener">arXiv:2405.18264</a>. <em>Journal of Graph Theory</em> 109(4): 514–517 (2025).</li>
+              <li><span class="paper-title">Euclidean Gallai-Ramsey for various configurations</span>, with Xinbu Cheng. <a href="https://arxiv.org/abs/2305.18218" target="_blank" rel="noopener">arXiv:2305.18218</a>. <em>Discrete &amp; Computational Geometry</em> 73, 1037–1052 (2025).</li>
+              <li><span class="paper-title">A polynomial resultant approach to algebraic construction of extremal graphs</span>, with Tao Zhang and Gennian Ge. <a href="https://arxiv.org/abs/2109.15148" target="_blank" rel="noopener">arXiv:2109.15148</a>. <em>Science China Mathematics</em> 68, 485–506 (2025).</li>
+              <li><span class="paper-title">Piercing independent sets in graphs without large induced matching</span>, with Jiangdong Ai, Hong Liu and Qiang Zhou. <a href="https://arxiv.org/abs/2403.19737" target="_blank" rel="noopener">arXiv:2403.19737</a>. <em>Electronic Journal of Combinatorics</em> 32 (2025), no. 1, Paper 1.10.</li>
+              <li><span class="paper-title">A rainbow framework for coded caching and its applications</span>, with Min Xu, Gennian Ge and Minqian Liu. <a href="https://arxiv.org/abs/2209.04647" target="_blank" rel="noopener">arXiv:2209.04647</a>. <em>IEEE Transactions on Information Theory</em> 70(3): 1738–1752 (2024).</li>
+              <li><span class="paper-title">Exact values and improved bounds on k-neighborly families of boxes</span>, with Xinbu Cheng, Meiqin Wang and Chi Hoi Yip. <a href="https://arxiv.org/abs/2301.06485" target="_blank" rel="noopener">arXiv:2301.06485</a>. <em>European Journal of Combinatorics</em> 118 (2024), 103926.</li>
+              <li><span class="paper-title">Local rainbow coloring for various graphs</span>, with Xinbu Cheng. <a href="https://arxiv.org/abs/2207.07532" target="_blank" rel="noopener">arXiv:2207.07532</a>. <em>Electronic Journal of Combinatorics</em> 31 (2024), no. 2, Paper 2.55.</li>
+              <li><span class="paper-title">Embedding bipartite distance graphs under Hamming metric in finite fields</span>, with Wenjun Yu and Gennian Ge. <em>Journal of Combinatorial Theory, Series A</em> 198 (2023), Paper No. 105765.</li>
+              <li><span class="paper-title">Stability through non-shadows</span>, with Jun Gao and Hong Liu. <a href="https://arxiv.org/abs/2212.07821" target="_blank" rel="noopener">arXiv:2212.07821</a>. <em>Combinatorica</em> 43, 1125–1137 (2023).</li>
+              <li><span class="paper-title">On vertex-induced weighted Turán problems</span>, with Yifan Jing and Gennian Ge. <em>Discrete Mathematics</em> 345(1), 112628 (2022).</li>
+              <li><span class="paper-title">On color isomorphic subdivisions</span>, with Gennian Ge. <em>Discrete Mathematics</em> 345(5), 112805 (2022).</li>
+              <li><span class="paper-title">A note on multicolor Ramsey number of small odd cycles versus a large clique</span>, with Gennian Ge. <em>Discrete Mathematics</em> 345(6), 112823 (2022).</li>
+              <li><span class="paper-title">Some extremal results on hypergraph Turán problems</span>, with Tao Zhang and Gennian Ge. <em>Science China Mathematics</em> 65(8), 1765–1774 (2022).</li>
+              <li><span class="paper-title">Some tight lower bounds for Turán problems via constructions of multi-hypergraphs</span>, with Tao Zhang and Gennian Ge. <em>European Journal of Combinatorics</em> 89, 103161 (2020).</li>
+              <li><span class="paper-title">Color isomorphic even cycles and a related Ramsey problem</span>, with Tao Zhang, Yifan Jing and Gennian Ge. <em>SIAM Journal on Discrete Mathematics</em> 34(3), 1999–2008 (2020).</li>
+              <li><span class="paper-title">Erdős–Falconer Distance Problem under Hamming Metric in Vector Spaces over Finite Fields</span>, with Gennian Ge. <em>SIAM Journal on Discrete Mathematics</em> 34(4), 2208–2220 (2020).</li>
+              <li><span class="paper-title">New theoretical bounds and constructions of permutation codes under block permutation metric</span>, with Yiwei Zhang and Gennian Ge. <em>Designs, Codes and Cryptography</em> 87(11), 2625–2637 (2019).</li>
+            </ol>
+
+            <p class="small-note" style="margin-top:16px;">
+              Unpublished note previously listed: <em>Sparse universal graph for graphs with bounded edge-vertex ratio</em>, with Xinbu Cheng and Danni Peng.
+            </p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section id="activities">
+      <div class="container">
+        <h2 class="section-title">Activities</h2>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3 style="margin-top:0;">Referee Service</h3>
+            <ul class="list-tight">
+              <li>Mathematical Reviews (Reviewer Number 172025)</li>
+              <li>Journal of the Operations Research Society of China</li>
+              <li>Journal of Combinatorial Theory, Series B</li>
+              <li>IEEE Transactions on Information Theory</li>
+              <li>Journal of Combinatorial Theory, Series A</li>
+              <li>Discrete &amp; Computational Geometry</li>
+              <li>Journal of Graph Theory</li>
+              <li>IEEE International Symposium on Information Theory (ISIT)</li>
+              <li>Designs, Codes and Cryptography</li>
+              <li>European Journal of Combinatorics</li>
+              <li>Acta Mathematica Hungarica</li>
+              <li>Electronic Journal of Combinatorics</li>
+              <li>Discrete Mathematics</li>
+              <li>Bulletin of the Brazilian Mathematical Society</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3 style="margin-top:0;">Teaching</h3>
+            <ul class="list-tight">
+              <li>2021 Fall: Extremal Combinatorics</li>
+              <li>2021 Spring: Combinatorial Designs</li>
+              <li>2020 Fall: Extremal Combinatorics</li>
+              <li>2020 Spring: Combinatorial Designs</li>
+              <li>2019 Fall: Extremal Combinatorics</li>
+            </ul>
+          </div>
+        </div>
+
+        <details style="margin-top: 18px;" open>
+          <summary>Selected Recent Talks</summary>
+          <div class="details-body">
+            <ol class="pub-list">
+              <li>December 22–24, 2025: <em>Uniform set systems with small VC-dimension</em>, invited talk, 35th KIAS Combinatorics Workshop, Busan, Korea.</li>
+              <li>December 16, 2025: <em>Extremal and stability results for Turan-type problems</em>, Zhejiang University, Hangzhou, China.</li>
+              <li>November 14, 2025: <em>Multilinear polynomial methods and some applications in combinatorics</em>, invited talk, Soochow University, Suzhou, China.</li>
+              <li>November 14, 2025: <em>VC-dimension in graph theory</em>, invited talk, Xi’an Jiaotong-Liverpool University, Suzhou, China.</li>
+              <li>October 17–20, 2025: <em>Canonical Ramsey for various configurations</em>, 3rd Workshop on Combinatorics, Great Bay University, Dongguan, China.</li>
+              <li>October 10, 2025: <em>When can a large H-free graph be homomorphic to a small one?</em>, invited talk, NUAA, Nanjing, China.</li>
+              <li>September 17, 2025: <em>Polynomial methods in combinatorics</em>, AMSS, CAS.</li>
+              <li>September 13, 2025: <em>Uniform set systems with small VC-dimension</em>, Nankai University.</li>
+              <li>September 10, 2025: <em>VC-dimension in Combinatorics</em>, BIT.</li>
+              <li>August 20–23, 2025: <em>Uniform set systems with small VC-dimension</em>, invited talk, 13th Cross-Strait Graph Theory and Combinatorics Conference, Zhejiang University, Hangzhou.</li>
+              <li>April 30, 2025: <em>VC-dimension in Combinatorics</em>, Xi’an Jiaotong University.</li>
+              <li>April 29, 2025: <em>Uniform set systems with small VC-dimension</em>, Northwestern University of Technology.</li>
+              <li>March 27–30, 2025: <em>Dense graphs without certain subgraphs: structural insights and thresholds</em>, 4th East Asia Workshop on Extremal and Structural Graph Theory, Sun Yat-sen University, Guangzhou.</li>
+              <li>February 28, 2025: <em>Uniform set systems with small VC-dimension</em>, Taiyuan University of Technology, Taiyuan.</li>
+              <li>September 9, 2024: <em>Theory of VC-dimension and its applications</em>, invited talk, Xidian University, Xi’an.</li>
+            </ol>
+            <p class="small-note" style="margin-top:14px;">
+              The previous site contains a longer talk archive; you can expand this list later if you want a fully exhaustive page.
+            </p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3 style="margin-top:0;">Email</h3>
+            <p><a href="mailto:zixiangxu@ibs.re.kr">zixiangxu@ibs.re.kr</a></p>
+
+            <h3>Affiliation</h3>
+            <p class="muted">
+              Extremal Combinatorics and Probability Group<br />
+              Institute for Basic Science (IBS)
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 style="margin-top:0;">Links</h3>
+            <ul class="list-tight">
+              <li><a href="https://www.ibs.re.kr/ecopro/zixiangxu/" target="_blank" rel="noopener">Previous IBS Homepage</a></li>
+            </ul>
+            <p class="small-note" style="margin-top: 12px;">
+              Suggested next additions: Google Scholar, arXiv author page, ORCID, CV PDF, and a separate talks page.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-box">
+      <div>© 2026 Zixiang Xu. This site is a GitHub Pages-ready single-file homepage.</div>
+    </div>
+  </footer>
+</body>
+</html>
