@@ -35,6 +35,19 @@
       © 2026 Zixiang Xu. Hosted on GitHub Pages.
      <script data-goatcounter="https://zjwyz.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
+      <div class="site-counter">
+  Total visits: <span id="gc-total">—</span>
+</div>
+
+<script>
+  (function () {
+    const code = "https://zjwyz.goatcounter.com/count"; // 替换成你的 GoatCounter code
+    fetch(`https://${code}.goatcounter.com/counter/TOTAL.json`)
+      .then(r => r.json())
+      .then(d => { document.getElementById('gc-total').textContent = d.count; })
+      .catch(() => {});
+  })();
+</script>
   </div>
 </main>
 </body>
